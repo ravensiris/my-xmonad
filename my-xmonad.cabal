@@ -1,0 +1,23 @@
+name:           my-xmonad
+version:        0.0.1
+description:    My XMonad executable
+homepage:       https://github.com/ravensiris/my-xmonad
+bug-reports:    https://github.com/ravensiris/my-xmonad/issues
+author:         Maksymilian Jodłowski<maksymilian.jodlowki@gmail.com>
+copyright:      2022 Maksymilian Jodłowski
+build-type:     Simple
+cabal-version:  >= 2.0
+tested-with:    GHC == 8.10.7
+
+executable my-xmonad
+  main-is: xmonad.hs
+  hs-source-dirs: .
+  default-language: Haskell2010
+  build-depends: base >=4.7 && <5
+               , containers >=0.6 && <0.7
+               , process >=1.6.5 && <1.7
+               , stm >=2.5 && <2.6
+               , xmonad >=0.15 && <0.16
+               , xmonad-contrib >=0.16 && <0.17
+               , X11 >=1.9 && <2
+  ghc-options: -threaded -rtsopts -O2 "-with-rtsopts=-N6 -M2g"
